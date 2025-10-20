@@ -1,0 +1,33 @@
+// Breakpoints
+$breakpoint-xs: 0; // Extra small devices (portrait phones)
+$breakpoint-sm: 576px; // Small devices (landscape phones)
+$breakpoint-md: 768px; // Medium devices (tablets)
+$breakpoint-lg-one: 820px; // Tablet portrait
+$breakpoint-lg-two: 1080px; // Tablet landscape
+$breakpoint-xl: 1200px; // Extra large devices (large desktops)
+$breakpoint-xl-two: 1400px; // Extra large screens (ultra-wide or HD)
+$breakpoint-mobile: 450px; // For mobiles
+$breakpoint-mobile-two: 390px; // Form smaller mobiles
+
+// Z-index
+$zindex-dropdown: 1000;
+$zindex-sticky: 1020;
+$zindex-fixed: 1030;
+$zindex-modal-backdrop: 1040;
+$zindex-modal: 1050;
+$zindex-popover: 1060;
+$zindex-tooltip: 1070;
+
+// Change these later
+// fonts
+$heading-one: 2.6rem;
+$heading-two: 2.4rem;
+$heading-three: 2.2rem;
+$heading-four: 2rem;
+$heading-five: 1.8rem;
+$heading-six: 1.6rem;
+$para-one: 1.4rem;
+$para-two: 1.2rem;
+
+// Form input default height
+$form-input-height-default: 5.5rem;

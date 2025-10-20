@@ -1,0 +1,100 @@
+/* stylelint-disable */
+@use 'variables' as *;
+@use 'reset' as *;
+@use 'functions' as *;
+@use 'mixins' as *;
+@use 'colors_dark' as *;
+
+// Import font here
+
+// html.dark {
+//   @import './colors_dark';
+// }
+// html.light {
+//   @import './colors_light';
+// }
+
+//Base Styling
+body,
+html {
+  font-family:
+    'Encode Sans Variable', sans-serif; // Single font style across P4 workflow
+  font-size: 10px; // For easy rem
+  background-color: $color-background;
+}
+
+button {
+  cursor: pointer;
+}
+
+// Default font styling
+
+h1 {
+  font-size: $heading-one;
+  line-height: 3.5rem;
+}
+
+h2 {
+  font-size: $heading-two;
+}
+
+h3 {
+  font-size: $heading-three;
+}
+
+h4 {
+  font-size: $heading-four;
+}
+
+h5 {
+  font-size: $heading-five;
+}
+
+h6 {
+  font-size: $heading-six;
+}
+
+p {
+  font-size: $para-one;
+}
+
+// Scroll bar styles
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.6rem;
+  height: 0.6rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  // box-shadow: inset 0 0 0.5rem rgba(28 28 28 / 100%);
+  background-color: $color-list-view;
+  border-radius: 0.3rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color-primary;
+  border-radius: 0.3rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $color-primary;
+}
+
+/* only on firefox */
+@-moz-document url-prefix() {
+  * {
+    scrollbar-color: $color-primary $color-list-view;
+    scrollbar-width: thin;
+    scrollbar-gutter: auto;
+  }
+}
+
+.pagination {
+  justify-content: end;
+  margin-top: auto;
+  margin-bottom: 2rem;
+}

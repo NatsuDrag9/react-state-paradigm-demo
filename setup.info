@@ -1,0 +1,53 @@
+# Routing (Default)
+yarn add react-router-dom
+
+#### Code Quality & Linting (Mandatory)
+
+# ESLint Configuration
+yarn add -D eslint@^8.56.0
+yarn add -D eslint-plugin-import eslint-import-resolver-typescript
+yarn add -D eslint-config-prettier
+yarn add -D eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-html eslint-plugin-react
+yarn add -D eslint-config-airbnb eslint-config-airbnb-typescript
+yarn add -D eslint-plugin-prettier
+
+# Prettier
+yarn add -D prettier
+
+# Stylelint Configuration
+yarn add -D stylelint@^16.1.0
+yarn add -D stylelint-config-standard stylelint-config-clean-order
+yarn add -D stylelint-scss stylelint-images stylelint-high-performance-animation
+yarn add -D stylelint-selector-bem-pattern stylelint-config-css-modules stylelint-config-standard-scss
+
+
+#### CSS Preprocessing (Mandatory)
+yarn add -D sass
+
+#### Git Hooks & Commit Standards (Mandatory)
+# Husky for Git Hooks (Linux)
+yarn add -D husky lint-staged
+npx husky-init && yarn
+
+# For Windows
+yarn add -D husky@latest
+yarn husky init
+
+# Commitlint
+yarn add -D @commitlint/cli @commitlint/config-conventional @types/node
+echo "yarn commitlint --edit \$1" > .husky/commit-msg
+
+#### Miscellaneous
+
+# Toast
+yarn add react-hot-toast
+
+# Log utilities
+yarn add detect-browser public-ip
+
+# Error Boundary
+yarn add react-error-boundary
+yarn add stacktrace-parser
+
+# Globals
+yarn add --dev globals

@@ -1,0 +1,46 @@
+// Color palette
+$color-stroke: rgb(82 82 82 / 100%);
+$color-background: rgb(9 9 9 / 100%);
+$color-list-view: rgb(30 30 30 / 100%);
+$color-list-view-clicked: rgb(45 45 45 / 100%);
+$color-primary: rgb(79 84 249 / 100%);
+$color-heading: rgb(255 255 255 / 100%);
+$color-text: rgb(202 202 202 / 100%);
+$color-text-two: rgb(142 142 142 / 100%);
+$color-red: rgb(255 74 74 / 100%);
+$color-yellow: rgb(238 157 0 / 100%);
+$color-green: rgb(15 193 0 / 100%);
+$color-tm-stroke: rgb(113 113 113 / 100%);
+$color-light-green: rgb(52 92 95 / 100%);
+$color-dark-green: rgb(35 71 79 / 100%);
+$color-light-grey: rgb(52 62 95 / 100%);
+$color-dark-grey: rgb(44 51 78 / 100%);
+
+// Gradients
+$gradient-one: linear-gradient(
+  174.37deg,
+  rgb(159 4 51 / 100%) 3.85%,
+  rgb(215 60 107 / 100%) 94.91%
+);
+$gradient-two: linear-gradient(
+  174.37deg,
+  rgb(10 70 127 / 100%) 3.85%,
+  rgb(24 143 253 / 100%) 94.91%
+);
+$gradient-three: linear-gradient(
+  174.37deg,
+  rgb(114 79 147 / 100%) 3.85%,
+  rgb(175 138 210 / 100%) 94.91%
+);
+$gradient-four: linear-gradient(
+  174.37deg,
+  rgb(0 101 125 / 100%) 3.85%,
+  rgb(1 155 192 / 100%) 94.91%
+);
+$gradient-five: linear-gradient(
+  174.37deg,
+  rgb(72 83 103 / 100%) 3.85%,
+  rgb(165 180 209 / 100%) 94.91%
+);
+$color-popup-overlay: rgb(255 255 255 / 30%);
+$color-option-highlight: rgb(59 58 106 / 17%);
