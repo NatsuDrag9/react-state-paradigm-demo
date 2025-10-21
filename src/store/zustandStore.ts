@@ -5,7 +5,7 @@ import { create } from 'zustand';
 export const useZustandStore = create<ZustandStoreState>((set) => ({
   // Centralized state
   appState: {
-    username: 'Natsu Dragneel',
+    username: 'Natsu Dragneel Zustand',
     theme: 'light',
     notificationCount: 0,
   },

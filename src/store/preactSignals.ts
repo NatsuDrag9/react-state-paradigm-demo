@@ -2,7 +2,7 @@ import { AtomAsyncData } from '@definitions/store';
 import { signal, computed } from '@preact/signals-react';
 import { logInDev } from '@utils/logUtils';
 
-export const sigUsername = signal('Natsu Signal');
+export const sigUsername = signal('Natsu Dragneel Signal');
 export const sigNotificationCount = signal(0);
 export const sigIsLoading = signal(false);
 export const sigAsyncData = signal<AtomAsyncData>(null);

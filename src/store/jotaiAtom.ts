@@ -2,7 +2,7 @@ import { AtomAsyncData } from '@definitions/store';
 import { logInDev } from '@utils/logUtils';
 import { atom } from 'jotai';
 
-export const userNameAtom = atom('Fairy Tail');
+export const userNameAtom = atom('Natsu Dragneel Jotai');
 export const notificationCountAtom = atom(0);
 export const asyncDataAtom = atom<AtomAsyncData>(null);
 export const isLoadingAtom = atom(false);

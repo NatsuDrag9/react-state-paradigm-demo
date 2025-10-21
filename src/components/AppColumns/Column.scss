@@ -1,0 +1,9 @@
+.app-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid $color-stroke;
+  border-radius: 0.8rem;
+}
