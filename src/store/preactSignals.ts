@@ -9,6 +9,7 @@ export const sigAsyncData = signal<AtomAsyncData>(null);
 
 // Mutation action
 export const incrementSignalNotifications = () => {
+  logInDev('SIGNALS: increment notifications');
   sigNotificationCount.value += 1;
 };
 

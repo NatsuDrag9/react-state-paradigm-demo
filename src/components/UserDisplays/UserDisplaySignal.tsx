@@ -5,11 +5,11 @@ function UserDisplaySignal() {
   return (
     <div className="user-display">
       <p>
-        Username: <strong>{sigUsername.value}</strong>
+        Username: <strong>{sigUsername}</strong>
       </p>
       <p>
         Notifications (VDOM Bypass Test):
-        <strong>{sigNotificationCount.value}</strong>
+        <strong>{sigNotificationCount}</strong>
       </p>
     </div>
   );

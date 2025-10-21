@@ -1,6 +1,7 @@
 import { useSetAtom } from 'jotai';
 import { notificationCountAtom, asyncDataWriteAtom } from '@store/jotaiAtom';
 import './ActionButton.scss';
+import { logInDev } from '@utils/logUtils';
 
 function ActionButtonJotai() {
   const setNotificationCount = useSetAtom(notificationCountAtom);
@@ -9,6 +10,7 @@ function ActionButtonJotai() {
 
   const incrementNotifications = () => {
     // Jotai update requires reading the current value and setting the new value
+    logInDev('JOTAI: incremented notifications');
     setNotificationCount((prev: number) => prev + 1);
   };
 
