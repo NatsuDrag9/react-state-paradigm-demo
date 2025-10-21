@@ -1,0 +1,13 @@
+.render-counter {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__count-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-between;
+    color: $color-text;
+  }
+}

@@ -783,6 +783,19 @@
   resolved "https://registry.yarnpkg.com/@pkgr/core/-/core-0.2.9.tgz#d229a7b7f9dac167a156992ef23c7f023653f53b"
   integrity sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==
 
+"@preact/signals-core@^1.12.0":
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/@preact/signals-core/-/signals-core-1.12.1.tgz#714b489bb35d9874cc44b35706a9dc27da8d21c4"
+  integrity sha512-BwbTXpj+9QutoZLQvbttRg5x3l5468qaV2kufh+51yha1c53ep5dY4kTuZR35+3pAZxpfQerGJiQqg34ZNZ6uA==
+
+"@preact/signals-react@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@preact/signals-react/-/signals-react-3.3.1.tgz#676c4f8b83ee42bc8f9f49539e6d505a4a064419"
+  integrity sha512-VMVDVt2zxtv/uvYBfuaAX1KJPZjpSB23ohbbCAzWAv0J0IXRxyDMSVUirxq1nY6nzeyldAAXJOykAtlVIyQ/jA==
+  dependencies:
+    "@preact/signals-core" "^1.12.0"
+    use-sync-external-store "^1.2.0"
+
 "@rolldown/pluginutils@1.0.0-beta.38":
   version "1.0.0-beta.38"
   resolved "https://registry.yarnpkg.com/@rolldown/pluginutils/-/pluginutils-1.0.0-beta.38.tgz#95253608c4629eb2a5f3d656009ac9ba031eb292"
@@ -3020,6 +3033,11 @@ jiti@^2.6.1:
   resolved "https://registry.yarnpkg.com/jiti/-/jiti-2.6.1.tgz#178ef2fc9a1a594248c20627cd820187a4d78d92"
   integrity sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==
 
+jotai@^2.15.0:
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/jotai/-/jotai-2.15.0.tgz#2a697924b7dcfff71847e83c7493c92e3b731e88"
+  integrity sha512-nbp/6jN2Ftxgw0VwoVnOg0m5qYM1rVcfvij+MZx99Z5IK13eGve9FJoCwGv+17JvVthTjhSmNtT5e1coJnr6aw==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -3232,7 +3250,7 @@ lodash.upperfirst@^4.3.1:
   resolved "https://registry.yarnpkg.com/lodash.upperfirst/-/lodash.upperfirst-4.3.1.tgz#1365edf431480481ef0d1c68957a5ed99d49f7ce"
   integrity sha512-sReKOYJIJf74dhJONhU4e0/shzi1trVbSWDOhKYE5XV2O+H7Sb2Dihwuc7xWxVl+DgFPyTqIN3zMfT9cq5iWDg==
 
-lodash@>=4.17.21, lodash@^4.17.4:
+lodash@>=4.17.21, lodash@^4.17.21, lodash@^4.17.4:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -4502,6 +4520,11 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
+use-sync-external-store@^1.2.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.6.0.tgz#b174bfa65cb2b526732d9f2ac0a408027876f32d"
+  integrity sha512-Pp6GSwGP/NrPIrxVFAIkOQeyw8lFenOHijQWkUTrDvrF4ALqylP2C/KCkeS9dpUM3KvYRQhna5vt7IL95+ZQ9w==
+
 util-deprecate@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
@@ -4666,3 +4689,8 @@ yocto-queue@^1.0.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-1.2.1.tgz#36d7c4739f775b3cbc28e6136e21aa057adec418"
   integrity sha512-AyeEbWOu/TAXdxlV9wmGcR0+yh2j3vYPGOECcIj2S7MkrLyC7ne+oye2BKTItt0ii2PHk4cDy+95+LshzbXnGg==
+
+zustand@^5.0.8:
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-5.0.8.tgz#b998a0c088c7027a20f2709141a91cb07ac57f8a"
+  integrity sha512-gyPKpIaxY9XcO2vSMrLbiER7QMAMGOQZVRdJ6Zi782jkbzZygq5GI9nG8g+sMgitRtndwaBSl7uiqC49o1SSiw==

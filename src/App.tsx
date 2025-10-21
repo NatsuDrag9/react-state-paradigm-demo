@@ -1,34 +1,45 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import {
+  ActionButtonJotai,
+  ActionButtonSignal,
+  ActionButtonZustand,
+  RenderCounter,
+  UserDisplayJotai,
+  UserDisplaySignal,
+  UserDisplayZustand,
+} from '@components';
 import './App.scss';
+import { Provider } from 'jotai';
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app">
+      {/* Zustand */}
+      <div className="app__zustand">
+        <h2 className="app__title zustand">Zustand</h2>
+        <RenderCounter storeKey="Zustand">
+          <UserDisplayZustand />
+        </RenderCounter>
+        <ActionButtonZustand />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      {/* Jotai */}
+      <Provider>
+        <div className="app__jotai">
+          <h2 className="app__title jotai">Jotai</h2>
+          <RenderCounter storeKey="Jotai">
+            <UserDisplayJotai />
+          </RenderCounter>
+          <ActionButtonJotai />
+        </div>
+      </Provider>
+      {/* Signal */}
+      <div className="app__signal">
+        <h2 className="app__title signal">Signal</h2>
+        <RenderCounter storeKey="Signal">
+          <UserDisplaySignal />
+        </RenderCounter>
+        <ActionButtonSignal />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   );
 }
 

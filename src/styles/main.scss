@@ -1,7 +1,8 @@
 /* stylelint-disable */
 @use 'variables' as *;
 @use 'reset' as *;
-@use 'functions' as *;
+
+// @use 'functions' as *;
 @use 'mixins' as *;
 @use 'colors_dark' as *;
 
@@ -97,4 +98,16 @@ p {
   justify-content: end;
   margin-top: auto;
   margin-bottom: 2rem;
+}
+
+.zustand {
+  color: $color-heading;
+}
+
+.jotai {
+  color: $color-yellow;
+}
+
+.signal {
+  color: $color-red;
 }
