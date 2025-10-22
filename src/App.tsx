@@ -1,4 +1,9 @@
-import { JotaiColumn, SignalColumn, ZustandColumn } from '@components';
+import {
+  JotaiColumn,
+  SignalColumn,
+  ZustandColumn,
+  ZustandWastefulColumn,
+} from '@components';
 import './App.scss';
 
 function App() {
@@ -6,6 +11,8 @@ function App() {
     <div className="app">
       {/* Zustand */}
       <ZustandColumn />
+      {/* Zustand Wastefule */}
+      <ZustandWastefulColumn />
       {/* Jotai */}
       <JotaiColumn />
       {/* Signal */}

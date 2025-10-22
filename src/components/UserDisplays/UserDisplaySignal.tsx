@@ -1,5 +1,6 @@
 import { sigNotificationCount, sigUsername } from '@store/preactSignals';
 import './UserDisplay.scss';
+import RenderCounter from '../RenderCounter/RenderCounter';
 
 function UserDisplaySignal() {
   return (
@@ -11,6 +12,7 @@ function UserDisplaySignal() {
         Notifications (VDOM Bypass Test):
         <strong>{sigNotificationCount}</strong>
       </p>
+      <RenderCounter storeKey="Signal" />
     </div>
   );
 }

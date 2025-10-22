@@ -1,6 +1,7 @@
 import { notificationCountAtom, userNameAtom } from '@store/jotaiAtom';
 import { useAtomValue } from 'jotai';
 import './UserDisplay.scss';
+import RenderCounter from '../RenderCounter/RenderCounter';
 
 function UserDisplayJotai() {
   const name = useAtomValue(userNameAtom);
@@ -14,6 +15,7 @@ function UserDisplayJotai() {
         Notifications:
         <strong>{notificationCount}</strong>
       </p>
+      <RenderCounter storeKey="Jotai" />
     </div>
   );
 }

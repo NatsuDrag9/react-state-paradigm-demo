@@ -1,15 +1,12 @@
 import ActionButtonZustand from '../ActionButtons/ActionButtonZustand';
-import RenderCounter from '../RenderCounter/RenderCounter';
-import UserDisplayZustand from '../UserDisplays/UserDisplayZustand';
+import UserDisplayZustand from '../UserDisplays/UserDisplayZustandOptimal';
 import './Column.scss';
 
 function ZustandColumn() {
   return (
     <div className="app-column">
       <h2 className="zustand">Zustand</h2>
-      <RenderCounter storeKey="Zustand">
-        <UserDisplayZustand />
-      </RenderCounter>
+      <UserDisplayZustand />
       <ActionButtonZustand />
     </div>
   );

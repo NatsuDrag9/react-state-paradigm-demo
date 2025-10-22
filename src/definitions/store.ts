@@ -8,14 +8,16 @@ export interface ZustandAppState {
   notificationCount: number;
 }
 
-export interface ZustandStoreState {
-  appState: ZustandAppState;
-  asyncData: { title: string } | null;
-  isLoading: boolean;
-  incrementNotifications: () => void;
-  fetchData: () => Promise<void>;
-}
-
 export type AtomAsyncData = {
   title: string;
 } | null;
+
+export interface ZustandStoreState {
+  usernameId: number;
+  appState: ZustandAppState;
+  asyncData: AtomAsyncData;
+  isLoading: boolean;
+  changeUsername: () => void;
+  incrementNotifications: () => void;
+  fetchData: () => Promise<void>;
+}

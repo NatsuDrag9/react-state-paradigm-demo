@@ -4,6 +4,7 @@ import { create } from 'zustand';
 
 export const useZustandStore = create<ZustandStoreState>((set) => ({
   // Centralized state
+  usernameId: 0,
   appState: {
     username: 'Natsu Dragneel Zustand',
     theme: 'light',
@@ -11,6 +12,18 @@ export const useZustandStore = create<ZustandStoreState>((set) => ({
   },
   asyncData: null,
   isLoading: false,
+  changeUsername: () =>
+    set((state) => {
+      const newUsernameId = state.usernameId + 1;
+      logInDev('ZUSTAND: Changed username');
+      return {
+        usernameId: newUsernameId,
+        appState: {
+          ...state.appState,
+          username: `Natsu Dragneel Zustand ${newUsernameId}`,
+        },
+      };
+    }),
   incrementNotifications: () =>
     set((state) => {
       logInDev('ZUSTAND: incremented notifications');
