@@ -2,8 +2,12 @@ import { useSetAtom } from 'jotai';
 import { notificationCountAtom, asyncDataWriteAtom } from '@store/jotaiAtom';
 import './ActionButton.scss';
 import { logInDev } from '@utils/logUtils';
+import { ActionButtonProps } from './types';
 
-function ActionButtonJotai() {
+function ActionButtonJotai({
+  showButtonOne = true,
+  showButtonTwo = false,
+}: ActionButtonProps) {
   const setNotificationCount = useSetAtom(notificationCountAtom);
 
   const fetchJotaiData = useSetAtom(asyncDataWriteAtom);
@@ -17,15 +21,19 @@ function ActionButtonJotai() {
   return (
     <div className="action-button">
       <h6 className="action-button__title">Trigger Actions (Jotai):</h6>
-      <button
-        className="action-button__button"
-        onClick={incrementNotifications}
-      >
-        Increment Notification
-      </button>
-      <button className="action-button__button" onClick={fetchJotaiData}>
-        Fetch Async Data
-      </button>
+      {showButtonOne && (
+        <button
+          className="action-button__button"
+          onClick={incrementNotifications}
+        >
+          Increment Notification
+        </button>
+      )}
+      {showButtonTwo && (
+        <button className="action-button__button" onClick={fetchJotaiData}>
+          Fetch Async Data
+        </button>
+      )}
     </div>
   );
 }

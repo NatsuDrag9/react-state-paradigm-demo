@@ -1,7 +1,11 @@
 import { useZustandStore } from '@store/zustandStore';
 import './ActionButton.scss';
+import { ActionButtonProps } from './types';
 
-function ActionButtonZustand() {
+function ActionButtonZustand({
+  showButtonOne = true,
+  showButtonTwo = false,
+}: ActionButtonProps) {
   const incrementNotifications = useZustandStore(
     (state) => state.incrementNotifications
   );
@@ -10,15 +14,19 @@ function ActionButtonZustand() {
   return (
     <div className="action-button">
       <h6 className="action-button__title">Trigger Actions (Zustand):</h6>
-      <button
-        className="action-button__button"
-        onClick={incrementNotifications}
-      >
-        Increment Notification
-      </button>
-      <button className="action-button__button" onClick={fetchData}>
-        Fetch Async Data
-      </button>
+      {showButtonOne && (
+        <button
+          className="action-button__button"
+          onClick={incrementNotifications}
+        >
+          Increment Notification
+        </button>
+      )}
+      {showButtonTwo && (
+        <button className="action-button__button" onClick={fetchData}>
+          Fetch Async Data
+        </button>
+      )}
     </div>
   );
 }

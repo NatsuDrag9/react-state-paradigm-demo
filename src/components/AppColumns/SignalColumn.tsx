@@ -7,7 +7,7 @@ function SignalColumn() {
     <div className="app-column">
       <h2 className="signal">Signal</h2>
       <UserDisplaySignal />
-      <ActionButtonSignal />
+      <ActionButtonSignal showButtonOne showButtonTwo={false} />
     </div>
   );
 }

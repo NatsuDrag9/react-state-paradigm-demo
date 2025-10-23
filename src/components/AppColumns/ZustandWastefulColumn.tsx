@@ -7,7 +7,7 @@ function ZustandWastefulColumn() {
     <div className="app-column">
       <h2 className="zustand">Zustand Wasteful</h2>
       <UserDisplayZustandWasteful />
-      <ActionButtonZustandWasteful />
+      <ActionButtonZustandWasteful showButtonOne showButtonTwo={false} />
     </div>
   );
 }

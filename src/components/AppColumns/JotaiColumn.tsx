@@ -9,7 +9,7 @@ function JotaiColumn() {
       <div className="app-column">
         <h2 className="jotai">Jotai</h2>
         <UserDisplayJotai />
-        <ActionButtonJotai />
+        <ActionButtonJotai showButtonOne showButtonTwo={false} />
       </div>
     </Provider>
   );

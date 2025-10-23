@@ -7,7 +7,7 @@ function ZustandColumn() {
     <div className="app-column">
       <h2 className="zustand">Zustand</h2>
       <UserDisplayZustand />
-      <ActionButtonZustand />
+      <ActionButtonZustand showButtonOne showButtonTwo={false} />
     </div>
   );
 }
