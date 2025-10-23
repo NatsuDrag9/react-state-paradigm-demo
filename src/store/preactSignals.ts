@@ -1,6 +1,6 @@
 import { AtomAsyncData } from '@definitions/store';
 import { signal, computed } from '@preact/signals-react';
-import { logInDev } from '@utils/logUtils';
+import { logErrorInDev, logInDev } from '@utils/logUtils';
 
 export const sigUsername = signal('Natsu Dragneel Signal');
 export const sigNotificationCount = signal(0);
@@ -16,9 +16,22 @@ export const incrementSignalNotifications = () => {
 // Async action
 export const fetchSignalData = async () => {
   sigIsLoading.value = true;
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  sigAsyncData.value = { title: 'Signal Data Fetched' };
-  sigIsLoading.value = false;
+  // await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  try {
+    // Fetch uses path relative to browser's current url
+    const response = await fetch('/data/data.json');
+    const data = await response.json();
+
+    // Add a small delay after fetch to make loading state visible
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    sigAsyncData.value = { title: data.title };
+    sigIsLoading.value = false;
+  } catch (error) {
+    logErrorInDev('SIGNALS: Fetch error', error);
+    sigIsLoading.value = false;
+    sigAsyncData.value = { title: 'Fetch error' };
+  }
 };
 
 // Computed signal  (Auto-Memoized + Performance Metrics)

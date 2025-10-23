@@ -1,5 +1,5 @@
 import { AtomAsyncData } from '@definitions/store';
-import { logInDev } from '@utils/logUtils';
+import { logErrorInDev, logInDev } from '@utils/logUtils';
 import { atom } from 'jotai';
 
 export const userNameAtom = atom('Natsu Dragneel Jotai');
@@ -10,9 +10,22 @@ export const isLoadingAtom = atom(false);
 // Async write-only atom
 export const asyncDataWriteAtom = atom(null, async (_, set) => {
   set(isLoadingAtom, true);
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  set(asyncDataAtom, { title: 'Jotai Data Fetched' });
-  set(isLoadingAtom, false);
+  // await new Promise((resolve) => setTimeout(resolve, 1000));
+  try {
+    // Fetch uses path relative to browser's current url
+    const response = await fetch('/data/data.json');
+    const data = await response.json();
+
+    // Add a small delay after fetch to make loading state visible
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
+    set(asyncDataAtom, { title: data.title });
+    set(isLoadingAtom, false);
+  } catch (error) {
+    logErrorInDev('JOTAI: Fetch error', error);
+    set(isLoadingAtom, false);
+    set(asyncDataAtom, { title: 'Fetch Error' });
+  }
 });
 
 // Derived Atom (Auto-Memoized + Performance Metrics

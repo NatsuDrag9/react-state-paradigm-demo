@@ -1,5 +1,5 @@
 import { ZustandStoreState } from '@definitions/store';
-import { logInDev } from '@utils/logUtils';
+import { logErrorInDev, logInDev } from '@utils/logUtils';
 import { create } from 'zustand';
 
 export const useZustandStore = create<ZustandStoreState>((set) => ({
@@ -37,8 +37,19 @@ export const useZustandStore = create<ZustandStoreState>((set) => ({
   fetchData: async () => {
     set({ isLoading: true });
     logInDev('ZUSTAND: ', '1. Loading: true');
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    set({ asyncData: { title: 'Zustand Data Fetched' }, isLoading: false });
-    logInDev('ZUSTAND: ', '2. Data set, Loading: false');
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      // Fetch uses path relative to browser's current url
+      const response = await fetch('/data/data.json');
+      const data = await response.json();
+
+      // Add a small delay after fetch to make loading state visible
+      await new Promise((resolve) => setTimeout(resolve, 500));
+      set({ asyncData: { title: data.title }, isLoading: false });
+      logInDev('ZUSTAND: ', '2. Data set, Loading: false');
+    } catch (error) {
+      logErrorInDev('ZUSTAND: Fetch error', error);
+      set({ asyncData: { title: 'Fetch error' }, isLoading: false });
+    }
   },
 }));
