@@ -7,6 +7,11 @@ export const sigNotificationCount = signal(0);
 export const sigIsLoading = signal(false);
 export const sigAsyncData = signal<AtomAsyncData>(null);
 
+// Create a computed signal for the title
+export const sigDataTitle = computed(() => {
+  return sigAsyncData.value?.title ?? 'N/A';
+});
+
 // Mutation action
 export const incrementSignalNotifications = () => {
   logInDev('SIGNALS: increment notifications');
@@ -16,6 +21,7 @@ export const incrementSignalNotifications = () => {
 // Async action
 export const fetchSignalData = async () => {
   sigIsLoading.value = true;
+  logInDev('SIGNALS: ', '1. Loading: true');
   // await new Promise((resolve) => setTimeout(resolve, 1000));
 
   try {
@@ -27,6 +33,7 @@ export const fetchSignalData = async () => {
     await new Promise((resolve) => setTimeout(resolve, 500));
     sigAsyncData.value = { title: data.title };
     sigIsLoading.value = false;
+    logInDev('SIGNALS: ', '2. Data set, Loading: true');
   } catch (error) {
     logErrorInDev('SIGNALS: Fetch error', error);
     sigIsLoading.value = false;

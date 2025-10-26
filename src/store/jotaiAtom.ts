@@ -10,6 +10,7 @@ export const isLoadingAtom = atom(false);
 // Async write-only atom
 export const asyncDataWriteAtom = atom(null, async (_, set) => {
   set(isLoadingAtom, true);
+  logInDev('JOTAI: ', '1. Loading: true');
   // await new Promise((resolve) => setTimeout(resolve, 1000));
   try {
     // Fetch uses path relative to browser's current url
@@ -21,6 +22,7 @@ export const asyncDataWriteAtom = atom(null, async (_, set) => {
 
     set(asyncDataAtom, { title: data.title });
     set(isLoadingAtom, false);
+    logInDev('JOTAI: ', '2. Data set, Loading: false');
   } catch (error) {
     logErrorInDev('JOTAI: Fetch error', error);
     set(isLoadingAtom, false);
