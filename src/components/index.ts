@@ -9,3 +9,7 @@ export { default as ZustandColumn } from './AppColumns/ZustandColumn';
 export { default as ZustandWastefulColumn } from './AppColumns/ZustandWastefulColumn';
 export { default as JotaiColumn } from './AppColumns/JotaiColumn';
 export { default as SignalColumn } from './AppColumns/SignalColumn';
+export { default as ExpensiveComputationSignal } from './ExpensiveComputation/ExpensiveComputationSignal';
+export { default as ExpensiveComputationJotai } from './ExpensiveComputation/ExpensiveComputationJotai';
+export { default as ExpensiveComputationZustandMemoized } from './ExpensiveComputation/ExpensiveComputationZustandMemoized';
+export { default as ExpensiveComputationZustandUnMemoized } from './ExpensiveComputation/ExpensiveComputationZustandUnMemoized';

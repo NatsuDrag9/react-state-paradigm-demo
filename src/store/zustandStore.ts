@@ -2,6 +2,36 @@ import { ZustandStoreState } from '@definitions/store';
 import { logErrorInDev, logInDev } from '@utils/logUtils';
 import { create } from 'zustand';
 
+// --- MOCK DATA FOR EXPENSIVE COMPUTATION ---
+const MOCK_DATA = Array.from({ length: 1000 }, (_, i) => ({
+  id: i,
+  value: i % 10,
+}));
+
+// --- EXPENSIVE COMPUTATION LOGIC (INTERNAL TO STORE) ---
+export const expensiveFilterLogic = (
+  notificationCount: number,
+  memoized: boolean
+) => {
+  performance.mark(`Zustand_Filter_Start_${notificationCount}`);
+  logInDev(
+    `ZUSTAND ${memoized ? '(memoized)' : '(unmemoized)'}: Expensive filter logic ran count: ${notificationCount}`
+  );
+
+  // The actual expensive calculation: filter based on the notification count
+  const result = MOCK_DATA.filter(
+    (item) => item.value === notificationCount % 5
+  );
+
+  performance.mark(`Zustand_Filter_End_${notificationCount}`);
+  performance.measure(
+    'Zustand_Filter_Time',
+    `Zustand_Filter_Start_${notificationCount}`,
+    `Zustand_Filter_End_${notificationCount}`
+  );
+  return result;
+};
+
 export const useZustandStore = create<ZustandStoreState>((set) => ({
   // Centralized state
   usernameId: 0,
