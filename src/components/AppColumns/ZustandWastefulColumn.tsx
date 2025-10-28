@@ -1,7 +1,11 @@
 import UserDisplayZustandWasteful from '@components/UserDisplays/UserDisplayZustandWasteful';
 import './Column.scss';
 import ActionButtonZustandWasteful from '@components/ActionButtons/ActionButtonZustandWasteful';
-import { ExpensiveComputationZustandUnMemoized } from '@components';
+import {
+  ExpComZustandPartialWithMemo,
+  ExpComZustandPartialWithoutMemo,
+  ExpComZustandWorst,
+} from '@components';
 
 function ZustandWastefulColumn() {
   return (
@@ -11,8 +15,16 @@ function ZustandWastefulColumn() {
       <UserDisplayZustandWasteful />
       <ActionButtonZustandWasteful showButtonOne showButtonTwo={false} />
 
-      <h6 className="sub-title">Efficiency: Zustand Unmemoized</h6>
-      <ExpensiveComputationZustandUnMemoized />
+      <h6 className="sub-title">
+        Efficiency: Partial Optimization without memo
+      </h6>
+      <ExpComZustandPartialWithoutMemo />
+
+      <h6 className="sub-title">Efficiency: Worst Case</h6>
+      <ExpComZustandWorst />
+
+      <h6 className="sub-title">Efficiency: Partial Optimization with memo</h6>
+      <ExpComZustandPartialWithMemo />
     </div>
   );
 }

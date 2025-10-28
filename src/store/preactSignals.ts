@@ -42,7 +42,7 @@ export const fetchSignalData = async () => {
 };
 
 // Computed signal  (Auto-Memoized + Performance Metrics)
-const MOCK_DATA = Array.from({ length: 1000 }, (_, i) => ({
+const MOCK_DATA = Array.from({ length: 100000 }, (_, i) => ({
   id: i,
   value: i % 10,
 }));

@@ -2,7 +2,7 @@ import DataFetchDisplayZustandOptimal from '../DataFetchDisplays/DataFetchDispla
 import ActionButtonZustand from '../ActionButtons/ActionButtonZustand';
 import UserDisplayZustand from '../UserDisplays/UserDisplayZustandOptimal';
 import './Column.scss';
-import ExpensiveComputationZustandMemoized from '@components/ExpensiveComputation/ExpensiveComputationZustandMemoized';
+import { ExpComZustandOptimal } from '@components';
 
 function ZustandColumn() {
   return (
@@ -18,7 +18,7 @@ function ZustandColumn() {
       <ActionButtonZustand showButtonOne={false} showButtonTwo />
 
       <h6 className="sub-title">Efficiency: Zustand Memoized</h6>
-      <ExpensiveComputationZustandMemoized />
+      <ExpComZustandOptimal />
     </div>
   );
 }

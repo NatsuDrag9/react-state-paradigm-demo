@@ -3,7 +3,7 @@ import { logErrorInDev, logInDev } from '@utils/logUtils';
 import { create } from 'zustand';
 
 // --- MOCK DATA FOR EXPENSIVE COMPUTATION ---
-const MOCK_DATA = Array.from({ length: 1000 }, (_, i) => ({
+const MOCK_DATA = Array.from({ length: 100000 }, (_, i) => ({
   id: i,
   value: i % 10,
 }));
@@ -11,11 +11,11 @@ const MOCK_DATA = Array.from({ length: 1000 }, (_, i) => ({
 // --- EXPENSIVE COMPUTATION LOGIC (INTERNAL TO STORE) ---
 export const expensiveFilterLogic = (
   notificationCount: number,
-  memoized: boolean
+  optimizationType: string
 ) => {
   performance.mark(`Zustand_Filter_Start_${notificationCount}`);
   logInDev(
-    `ZUSTAND ${memoized ? '(memoized)' : '(unmemoized)'}: Expensive filter logic ran count: ${notificationCount}`
+    `ZUSTAND (${optimizationType}): Expensive filter logic ran count: ${notificationCount}`
   );
 
   // The actual expensive calculation: filter based on the notification count
