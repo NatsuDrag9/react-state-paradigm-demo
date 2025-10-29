@@ -1,4 +1,6 @@
 import {
+  ActionButtonJotai,
+  ActionButtonSignal,
   ExpensiveComputationJotai,
   ExpensiveComputationSignal,
   JotaiColumn,
@@ -37,11 +39,13 @@ function App() {
       <div className="app__section with-border">
         <h4 className="app__sub-title">Jotai Efficiency: </h4>
         <ExpensiveComputationJotai />
+        <ActionButtonJotai showButtonOne showButtonTwo={false} />
       </div>
 
       <div className="app__section with-border">
         <h4 className="app__sub-title">Signal Efficiency: </h4>
         <ExpensiveComputationSignal />
+        <ActionButtonSignal showButtonOne showButtonTwo={false} />
       </div>
     </div>
   );

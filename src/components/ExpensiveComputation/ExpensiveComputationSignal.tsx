@@ -10,9 +10,9 @@ function ExpensiveComputationSignal() {
 
   return (
     <div className="exp-computation">
-      <h6 className="exp-computation__title">
+      <p className="exp-computation__note">
         Result count: <strong>{resultCount}</strong>
-      </h6>
+      </p>
       <p className="exp-computation__metric">
         * Check console for Performance Measure Time *
       </p>
