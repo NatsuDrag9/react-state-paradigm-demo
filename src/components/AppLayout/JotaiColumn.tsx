@@ -10,7 +10,7 @@ function JotaiColumn() {
       <div className="app-column">
         <h2 className="jotai">Jotai</h2>
 
-        <h6 className="sub-title">Re-Render</h6>
+        <h6 className="sub-title">Re-Render Granularity</h6>
         <UserDisplayJotai />
         <ActionButtonJotai showButtonOne showButtonTwo={false} />
 

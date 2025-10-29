@@ -18,7 +18,9 @@ function App() {
         Performance Testing of State Management Paradigms
       </h2>
       <div className="app__section">
-        <h4 className="app__sub-title">Re-Render and Async Data Fetch</h4>
+        <h4 className="app__sub-title">
+          Re-Render Granularity and Async Data Fetch
+        </h4>
         <div className="app__column-container">
           {/* Zustand */}
           <ZustandColumn />

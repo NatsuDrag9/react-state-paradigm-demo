@@ -6,7 +6,7 @@ function ZustandWastefulColumn() {
   return (
     <div className="app-column">
       <h2 className="zustand">Zustand Wasteful</h2>
-      <h6 className="sub-title">Re-Render</h6>
+      <h6 className="sub-title">Re-Render Granularity</h6>
       <UserDisplayZustandWasteful />
       <ActionButtonZustandWasteful showButtonOne showButtonTwo={false} />
     </div>

@@ -8,7 +8,7 @@ function SignalColumn() {
     <div className="app-column">
       <h2 className="signal">Signal</h2>
 
-      <h6 className="sub-title">Re-Render</h6>
+      <h6 className="sub-title">Re-Render Granularity</h6>
       <UserDisplaySignal />
       <ActionButtonSignal showButtonOne showButtonTwo={false} />
 
