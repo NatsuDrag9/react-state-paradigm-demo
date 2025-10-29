@@ -1,0 +1,394 @@
+{
+  "measures": [
+    {
+      "name": "Update",
+      "duration": 4,
+      "startTime": 2723
+    },
+    {
+      "name": "Mount",
+      "duration": 16,
+      "startTime": 2727
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 1,
+      "startTime": 2734
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 2,
+      "startTime": 2735
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 1,
+      "startTime": 2737
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 1,
+      "startTime": 2738
+    },
+    {
+      "name": "Jotai_Filter_Time",
+      "duration": 1,
+      "startTime": 2740
+    },
+    {
+      "name": "Signal_Filter_Time",
+      "duration": 1,
+      "startTime": 2742
+    },
+    {
+      "name": "Mount",
+      "duration": 1,
+      "startTime": 2756
+    },
+    {
+      "name": "Cascading Update",
+      "duration": 1,
+      "startTime": 2757
+    },
+    {
+      "name": "Update",
+      "duration": 1,
+      "startTime": 55126
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 1,
+      "startTime": 55132
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 2,
+      "startTime": 55133
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 1,
+      "startTime": 55135
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 1,
+      "startTime": 55136
+    },
+    {
+      "name": "Update",
+      "duration": 1,
+      "startTime": 58904
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 1,
+      "startTime": 58907
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 2,
+      "startTime": 58909
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 2,
+      "startTime": 58911
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 1,
+      "startTime": 58913
+    },
+    {
+      "name": "Update",
+      "duration": 1,
+      "startTime": 62184
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 2,
+      "startTime": 62186
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 2,
+      "startTime": 69692
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 2,
+      "startTime": 73672
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 1,
+      "startTime": 73674
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 0,
+      "startTime": 73675
+    },
+    {
+      "name": "Zustand_Filter_Time",
+      "duration": 0,
+      "startTime": 73676
+    },
+    {
+      "name": "Jotai_Filter_Time",
+      "duration": 3,
+      "startTime": 77668
+    },
+    {
+      "name": "Jotai_Filter_Time",
+      "duration": 1,
+      "startTime": 81271
+    },
+    {
+      "name": "Jotai_Filter_Time",
+      "duration": 1,
+      "startTime": 83326
+    },
+    {
+      "name": "Signal_Filter_Time",
+      "duration": 2,
+      "startTime": 86164
+    },
+    {
+      "name": "Update",
+      "duration": 2,
+      "startTime": 86164
+    },
+    {
+      "name": "Update",
+      "duration": 3,
+      "startTime": 87270
+    },
+    {
+      "name": "Signal_Filter_Time",
+      "duration": 1,
+      "startTime": 87271
+    },
+    {
+      "name": "Signal_Filter_Time",
+      "duration": 1,
+      "startTime": 88266
+    },
+    {
+      "name": "Update",
+      "duration": 1,
+      "startTime": 88266
+    }
+  ],
+  "marks": [
+    {
+      "name": "Zustand_Filter_Start_0",
+      "startTime": 2734
+    },
+    {
+      "name": "Zustand_Filter_End_0",
+      "startTime": 2735
+    },
+    {
+      "name": "Zustand_Filter_Start_0",
+      "startTime": 2735
+    },
+    {
+      "name": "Zustand_Filter_End_0",
+      "startTime": 2737
+    },
+    {
+      "name": "Zustand_Filter_Start_0",
+      "startTime": 2737
+    },
+    {
+      "name": "Zustand_Filter_End_0",
+      "startTime": 2738
+    },
+    {
+      "name": "Zustand_Filter_Start_0",
+      "startTime": 2738
+    },
+    {
+      "name": "Zustand_Filter_End_0",
+      "startTime": 2739
+    },
+    {
+      "name": "Jotai_Filter_Start_0",
+      "startTime": 2740
+    },
+    {
+      "name": "Jotai_Filter_End_0",
+      "startTime": 2741
+    },
+    {
+      "name": "Signal_Filter_Start_0",
+      "startTime": 2742
+    },
+    {
+      "name": "Signal_Filter_End_0",
+      "startTime": 2743
+    },
+    {
+      "name": "Zustand_Filter_Start_1",
+      "startTime": 55132
+    },
+    {
+      "name": "Zustand_Filter_End_1",
+      "startTime": 55133
+    },
+    {
+      "name": "Zustand_Filter_Start_1",
+      "startTime": 55133
+    },
+    {
+      "name": "Zustand_Filter_End_1",
+      "startTime": 55135
+    },
+    {
+      "name": "Zustand_Filter_Start_1",
+      "startTime": 55135
+    },
+    {
+      "name": "Zustand_Filter_End_1",
+      "startTime": 55136
+    },
+    {
+      "name": "Zustand_Filter_Start_1",
+      "startTime": 55136
+    },
+    {
+      "name": "Zustand_Filter_End_1",
+      "startTime": 55137
+    },
+    {
+      "name": "Zustand_Filter_Start_2",
+      "startTime": 58907
+    },
+    {
+      "name": "Zustand_Filter_End_2",
+      "startTime": 58908
+    },
+    {
+      "name": "Zustand_Filter_Start_2",
+      "startTime": 58909
+    },
+    {
+      "name": "Zustand_Filter_End_2",
+      "startTime": 58911
+    },
+    {
+      "name": "Zustand_Filter_Start_2",
+      "startTime": 58911
+    },
+    {
+      "name": "Zustand_Filter_End_2",
+      "startTime": 58913
+    },
+    {
+      "name": "Zustand_Filter_Start_2",
+      "startTime": 58913
+    },
+    {
+      "name": "Zustand_Filter_End_2",
+      "startTime": 58914
+    },
+    {
+      "name": "Zustand_Filter_Start_2",
+      "startTime": 62186
+    },
+    {
+      "name": "Zustand_Filter_End_2",
+      "startTime": 62188
+    },
+    {
+      "name": "Zustand_Filter_Start_2",
+      "startTime": 69692
+    },
+    {
+      "name": "Zustand_Filter_End_2",
+      "startTime": 69694
+    },
+    {
+      "name": "Zustand_Filter_Start_3",
+      "startTime": 73672
+    },
+    {
+      "name": "Zustand_Filter_End_3",
+      "startTime": 73674
+    },
+    {
+      "name": "Zustand_Filter_Start_3",
+      "startTime": 73674
+    },
+    {
+      "name": "Zustand_Filter_End_3",
+      "startTime": 73675
+    },
+    {
+      "name": "Zustand_Filter_Start_3",
+      "startTime": 73675
+    },
+    {
+      "name": "Zustand_Filter_End_3",
+      "startTime": 73675
+    },
+    {
+      "name": "Zustand_Filter_Start_3",
+      "startTime": 73676
+    },
+    {
+      "name": "Zustand_Filter_End_3",
+      "startTime": 73676
+    },
+    {
+      "name": "Jotai_Filter_Start_1",
+      "startTime": 77668
+    },
+    {
+      "name": "Jotai_Filter_End_1",
+      "startTime": 77671
+    },
+    {
+      "name": "Jotai_Filter_Start_2",
+      "startTime": 81271
+    },
+    {
+      "name": "Jotai_Filter_End_2",
+      "startTime": 81272
+    },
+    {
+      "name": "Jotai_Filter_Start_3",
+      "startTime": 83326
+    },
+    {
+      "name": "Jotai_Filter_End_3",
+      "startTime": 83327
+    },
+    {
+      "name": "Signal_Filter_Start_1",
+      "startTime": 86164
+    },
+    {
+      "name": "Signal_Filter_End_1",
+      "startTime": 86166
+    },
+    {
+      "name": "Signal_Filter_Start_2",
+      "startTime": 87271
+    },
+    {
+      "name": "Signal_Filter_End_2",
+      "startTime": 87272
+    },
+    {
+      "name": "Signal_Filter_Start_3",
+      "startTime": 88266
+    },
+    {
+      "name": "Signal_Filter_End_3",
+      "startTime": 88267
+    }
+  ]
+}
