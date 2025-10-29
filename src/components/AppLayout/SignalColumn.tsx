@@ -1,8 +1,7 @@
 import UserDisplaySignal from '../UserDisplays/UserDisplaySignal';
 import ActionButtonSignal from '../ActionButtons/ActionButtonSignal';
-import './Column.scss';
+import './Layout.scss';
 import DataFetchDisplaySignal from '../DataFetchDisplays/DataFetchDisplaySignal';
-import ExpensiveComputationSignal from '@components/ExpensiveComputation/ExpensiveComputationSignal';
 
 function SignalColumn() {
   return (
@@ -16,9 +15,6 @@ function SignalColumn() {
       <h6 className="sub-title">Async Data Fetch</h6>
       <DataFetchDisplaySignal />
       <ActionButtonSignal showButtonOne={false} showButtonTwo />
-
-      <h6 className="sub-title">Efficiency</h6>
-      <ExpensiveComputationSignal />
     </div>
   );
 }

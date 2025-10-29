@@ -1,0 +1,34 @@
+.app-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid $color-stroke;
+  border-radius: 0.8rem;
+
+  .sub-title {
+    color: $color-wheat;
+  }
+}
+
+.app-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+  height: max-content;
+  min-height: 10rem;
+
+  .sub-title {
+    color: $color-wheat;
+  }
+
+  &__element {
+    width: 36rem;
+    height: 25rem;
+    padding: 1rem;
+    border: 1px solid $color-stroke;
+    border-radius: 0.8rem;
+  }
+}

@@ -11,7 +11,7 @@ function ExpensiveComputationSignal() {
   return (
     <div className="exp-computation">
       <h6 className="exp-computation__title">
-        Expensive filter result count: <strong>{resultCount}</strong>
+        Result count: <strong>{resultCount}</strong>
       </h6>
       <p className="exp-computation__metric">
         * Check console for Performance Measure Time *
