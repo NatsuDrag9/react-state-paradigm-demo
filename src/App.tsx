@@ -6,10 +6,10 @@ import {
   JotaiColumn,
   SignalColumn,
   ZustandColumn,
+  ZustandRow,
   ZustandWastefulColumn,
 } from '@components';
 import './App.scss';
-import ZustandRow from '@components/AppLayout/ZustandRow';
 
 function App() {
   return (

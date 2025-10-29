@@ -5,6 +5,7 @@ import { analyzer } from 'vite-bundle-analyzer';
 // https://vitejs.dev/config/
 const viteConfig = defineConfig({
   plugins: [react(), analyzer()],
+  base: '/react-state-paradigm-demo/',
   resolve: {
     alias: {
       '@services': '/src/services',
@@ -31,21 +32,6 @@ const viteConfig = defineConfig({
       },
     },
   },
-  optimizeDeps: {
-    exclude: ['msw-storybook-addon', '@storybook/blocks'],
-  },
-
-  /* Uncomment this when bundlesize is large due to recharts */
-  // build: {
-  //   rollupOptions: {
-  //     output: {
-  //       manualChunks: {
-  //         // Define chunks manually for these libraries
-  //         recharts: ['recharts'],
-  //       },
-  //     },
-  //   },
-  // },
 });
 
 export default viteConfig;
