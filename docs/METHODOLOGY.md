@@ -13,7 +13,7 @@ This document details the methodology used to compare Zustand, Jotai, and Preact
 - Visual render counters using `useRef` to track component re-renders
 - Performance timing using `performance.mark()` and `performance.measure()`
 
-![3-column-layout]("./full.png")
+![3-column-layout](full.png)
 
 ## Metric 1: Re-render Granularity
 
@@ -94,127 +94,7 @@ const count = sig_notificationCount.value;
 - **Jotai**: 6 renders (automatic granularity)
 - **Signals**: 1 render (VDOM bypass means component function doesn't re-run)
 
-## Metric 2: Computational Efficiency
-
-### Objective
-
-Measure how each paradigm handles expensive derived state and whether memoization is automatic or requires manual implementation.
-
-### Implementation
-
-#### Expensive Filter Operation
-
-All three paradigms implement the same expensive computation:
-
-```javascript
-const MOCK_DATA = Array.from({ length: 100000 }, (_, i) => ({
-  id: i,
-  value: i % 10,
-}));
-
-// Expensive filter that takes ~1.5ms
-const result = filter(MOCK_DATA, (item) => item.value === count % 5);
-```
-
-#### Zustand Implementation - Four Cases
-
-**Case 1: Precise Selector + No useMemo**
-
-```javascript
-const count = useZustandStore((state) => state.appState.notificationCount);
-const filtered = expensiveFilter(count); // Runs on every render
-```
-
-**Case 2: Broad Selector + No useMemo (WORST)**
-
-```javascript
-const appState = useZustandStore((state) => state.appState);
-const filtered = expensiveFilter(appState.notificationCount); // Runs on unnecessary renders
-```
-
-**Case 3: Broad Selector + useMemo**
-
-```javascript
-const appState = useZustandStore((state) => state.appState);
-const filtered = useMemo(
-  () => expensiveFilter(appState.notificationCount),
-  [appState.notificationCount]
-);
-```
-
-**Case 4: Precise Selector + useMemo (OPTIMAL)**
-
-```javascript
-const count = useZustandStore((state) => state.appState.notificationCount);
-const filtered = useMemo(() => expensiveFilter(count), [count]);
-```
-
-#### Jotai Implementation
-
-```javascript
-export const expensiveFilterAtom = atom((get) => {
-  const count = get(notificationCountAtom);
-  performance.mark(`Jotai_Filter_Start_${count}`);
-  const result = filter(MOCK_DATA, (item) => item.value === count % 5);
-  performance.mark(`Jotai_Filter_End_${count}`);
-  return result;
-});
-```
-
-- Derived atom automatically memoizes
-- Computed once per state change
-- All components share the cached result
-
-#### Signals Implementation
-
-```javascript
-export const expensiveComputedSignal = computed(() => {
-  const count = sig_notificationCount.value;
-  performance.mark(`Signal_Filter_Start_${count}`);
-  const result = filter(MOCK_DATA, (item) => item.value === count % 5);
-  performance.mark(`Signal_Filter_End_${count}`);
-  return result;
-});
-```
-
-- Computed signal automatically memoizes
-- Updates once per state change
-- All components read the cached value
-
-### Performance Tracking
-
-```javascript
-performance.mark('Start');
-// ... expensive operation ...
-performance.mark('End');
-performance.measure('Duration', 'Start', 'End');
-```
-
-Console logs track:
-
-1. When the expensive computation runs
-2. Which state change triggered it
-3. Cumulative time spent in computation
-
-### Test Actions
-
-1. Initial render (count = 0)
-2. Increment notifications 3 times
-3. Change username 2 times (should NOT trigger computation)
-4. Increment notifications 1 more time
-
-### Expected Outcomes
-
-**Necessary computations:** 4 (initial + 3 increments + 1 final increment)
-
-**Zustand Case 1:** 4 executions (good, but vulnerable to parent re-renders)  
-**Zustand Case 2:** 6 executions (4 necessary + 2 wasteful from username changes) = 33% waste  
-**Zustand Case 3:** 4 executions (useMemo prevents wasteful computation, but still re-renders)  
-**Zustand Case 4:** 4 executions (fully optimized)  
-**Jotai:** 4 executions (automatic)  
-**Signals:** 4 executions (automatic)
-
-## Metric 3: Async Flow Architecture
+## Metric 2: Async Flow Architecture
 
 ### Objective
 
@@ -294,6 +174,134 @@ All three paradigms were tested with optimal selectors/subscriptions:
 2. Second render: `asyncData` updates and `isLoading` changes to `false`
 
 This confirms that with proper implementation, all three paradigms achieve optimal re-render granularity for async flows.
+
+![granularity-and-async-flow](granularity-and-async-flow.png)
+
+## Metric 3: Computational Efficiency
+
+### Objective
+
+Measure how each paradigm handles expensive derived state and whether memoization is automatic or requires manual implementation.
+
+### Implementation
+
+#### Expensive Filter Operation
+
+All three paradigms implement the same expensive computation:
+
+```javascript
+const MOCK_DATA = Array.from({ length: 100000 }, (_, i) => ({
+  id: i,
+  value: i % 10,
+}));
+
+// Expensive filter that takes ~1.5ms
+const result = filter(MOCK_DATA, (item) => item.value === count % 5);
+```
+
+#### Zustand Implementation - Four Cases
+
+**Case 1: Precise Selector + No useMemo**
+
+```javascript
+const count = useZustandStore((state) => state.appState.notificationCount);
+const filtered = expensiveFilter(count); // Runs on every render
+```
+
+**Case 2: Broad Selector + No useMemo (WORST)**
+
+```javascript
+const appState = useZustandStore((state) => state.appState);
+const filtered = expensiveFilter(appState.notificationCount); // Runs on unnecessary renders
+```
+
+**Case 3: Broad Selector + useMemo**
+
+```javascript
+const appState = useZustandStore((state) => state.appState);
+const filtered = useMemo(
+  () => expensiveFilter(appState.notificationCount),
+  [appState.notificationCount]
+);
+```
+
+**Case 4: Precise Selector + useMemo (OPTIMAL)**
+
+```javascript
+const count = useZustandStore((state) => state.appState.notificationCount);
+const filtered = useMemo(() => expensiveFilter(count), [count]);
+```
+
+![efficiency-zustand](efficiency-zustand.png)
+
+#### Jotai Implementation
+
+```javascript
+export const expensiveFilterAtom = atom((get) => {
+  const count = get(notificationCountAtom);
+  performance.mark(`Jotai_Filter_Start_${count}`);
+  const result = filter(MOCK_DATA, (item) => item.value === count % 5);
+  performance.mark(`Jotai_Filter_End_${count}`);
+  return result;
+});
+```
+
+- Derived atom automatically memoizes
+- Computed once per state change
+- All components share the cached result
+
+![efficiency-jotai](efficiency-jotai.png)
+
+#### Signals Implementation
+
+```javascript
+export const expensiveComputedSignal = computed(() => {
+  const count = sig_notificationCount.value;
+  performance.mark(`Signal_Filter_Start_${count}`);
+  const result = filter(MOCK_DATA, (item) => item.value === count % 5);
+  performance.mark(`Signal_Filter_End_${count}`);
+  return result;
+});
+```
+
+- Computed signal automatically memoizes
+- Updates once per state change
+- All components read the cached value
+
+![efficiency-signal](efficiency-signal.png)
+
+### Performance Tracking
+
+```javascript
+performance.mark('Start');
+// ... expensive operation ...
+performance.mark('End');
+performance.measure('Duration', 'Start', 'End');
+```
+
+Console logs track:
+
+1. When the expensive computation runs
+2. Which state change triggered it
+3. Cumulative time spent in computation
+
+### Test Actions
+
+1. Initial render (count = 0)
+2. Increment notifications 3 times
+3. Change username 2 times (should NOT trigger computation)
+4. Increment notifications 1 more time
+
+### Expected Outcomes
+
+**Necessary computations:** 4 (initial + 3 increments + 1 final increment)
+
+**Zustand Case 1:** 4 executions (good, but vulnerable to parent re-renders)  
+**Zustand Case 2:** 6 executions (4 necessary + 2 wasteful from username changes) = 33% waste  
+**Zustand Case 3:** 4 executions (useMemo prevents wasteful computation, but still re-renders)  
+**Zustand Case 4:** 4 executions (fully optimized)  
+**Jotai:** 4 executions (automatic)  
+**Signals:** 4 executions (automatic)
 
 ## Data Collection Methods
 
