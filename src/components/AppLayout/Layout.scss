@@ -40,3 +40,59 @@
   align-items: center;
   width: 50%;
 }
+
+@media (min-width: $breakpoint-lg-two) and (max-width: $breakpoint-xl-two) {
+  .app-row {
+    &__element {
+      height: 32rem;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-lg-two) {
+  .app-row {
+    &__element {
+      height: 35rem;
+    }
+  }
+
+  .buttons {
+    width: 70%;
+  }
+}
+
+@media (max-width: $breakpoint-lg-one) {
+  .app-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    &__element {
+      height: 26rem;
+    }
+  }
+
+  .buttons {
+    width: 100%;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .app-column {
+    width: 100%;
+  }
+
+  .app-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+
+    &__element {
+      width: 100%;
+    }
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}
