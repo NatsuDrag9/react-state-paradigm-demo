@@ -98,7 +98,7 @@ const count = sig_notificationCount.value;
 
 ### Objective
 
-Demonstrate where sequential state update logic lives in each paradigm.
+Evaluates the architectural patterns each paradigm uses to handle asynchronous side-effect orchestration—the multi-step logic (the THUNK equivalent) that updates state sequentially (e.g., set loading, await side effect, set data).
 
 ### Implementation
 
